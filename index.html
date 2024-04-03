@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>furuCRM - Check In/Check Out</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>furuCRM</h1>
+        <h2>ROOM 803</h2>
+      </div>
+      <p id="clock">12:06</p>
+      <div class="name-input">
+        <label for="employeeName">Tên nhân viên:</label>
+        <select id="employeeName">
+          <option value="">Vui lòng chọn</option>
+          <option value="employeeA">Nhân viên A</option>
+          <option value="employeeB">Nhân viên B</option>
+          <option value="employeeC">Nhân viên C</option>
+        </select>
+      </div>
+      <div class="buttons">
+        <button class="check-in">CHECK IN</button>
+        <button class="check-out">CHECK OUT</button>
+      </div>
+      <div class="popup" id="popup">
+        <p id="popup-message"></p>
+        <button id="close-popup">Đóng</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="validation.js"></script>
+  </body>
+</html>
