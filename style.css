@@ -1,140 +1,148 @@
-* {
+/* Cài đặt chung */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f0f0f0;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Thay đổi thành min-height để giữ cho nội dung hiển thị trung tâm */
 }
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
-    padding: 10px; /* Thêm khoảng trống ngoài cùng */
-}
-
+  
 .container {
-    max-width: 100%; /* Tối ưu hóa chiều rộng */
-    margin: 0 auto; /* Canh giữa trên mọi thiết bị */
-    padding: 20px;
     background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 60px;
+    border-radius: 25px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    max-width: 950px; /* Tăng kích thước tối đa cho Ipad màn hình ngang */
+    position: relative; /* Cho phép định vị các phần tử bên trong */
+    width: 100%; /* Thêm thuộc tính width để giữ cho nội dung hiển thị trung tâm */
 }
 
+/* Header */
 .header {
-    text-align: center;
-    margin-bottom: 20px; /* Thêm khoảng cách dưới */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+h1, h2 {
+    margin: 0;
 }
 
 h1 {
-    font-size: 36px;
-    color: #4caf50;
-    margin-bottom: 5px;
+    font-size: 48px;
+    font-weight: bold;
+    color: #333;
 }
 
 h2 {
     font-size: 24px;
     color: #666;
-    margin-top: 5px;
 }
 
+/* Đồng hồ */
 #clock {
+    font-size: 96px;
+    font-weight: bold;
+    color: #333;
     text-align: center;
-    font-size: 48px;
-    margin-top: 20px;
-    color: #4caf50;
+    margin-bottom: 30px;
+    line-height: 1; /* Thêm line-height */
 }
 
+/* Tên nhân viên */
 .name-input {
-    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Căn giữa theo chiều ngang */
+    margin-bottom: 30px;
 }
 
 label {
-    display: block;
-    margin-top: 5px;
-    color: #4caf50;
+    margin-bottom: 10px;
 }
 
-select {
-    width: 50%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    margin: 5px auto; 
-    background-color: #f9f9f9;
-    display: block;
+#employeeName {
+    padding: 15px 20px;
+    font-size: 20px; /* Chữ to hơn */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    width: 100%;
+    max-width: 400px; /* Rộng hơn */
 }
 
-select option {
-    padding: 12px 20px;
-    font-size: 16px;
-    color: #333;
-    background-color: #f9f9f9;
-    transition: background-color 0.3s ease;
+/* Căn giữa cho dropdown chọn nhân viên */
+select#employeeName {
+    margin-top: 5px; /* Tăng khoảng cách giữa label và dropdown */
+    font-size: 20px; /* Chữ to hơn */
+    width: 100%;
 }
 
-select option:hover {
-    background-color: #e0e0e0;
+/* Khoảng cách giữa các mục trong dropdown */
+select#employeeName option {
+    padding: 10px 0; /* Thêm padding trên và dưới cho các mục trong dropdown */
 }
 
-select option:checked {
-    background-color: #b3d9ff;
-}
-
+/* Nút bấm */
 .buttons {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 .check-in,
 .check-out {
-    flex: 1; /* Tự động điều chỉnh kích thước */
-    padding: 15px;
-    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px 40px;
+    font-size: 24px;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 45%;
 }
 
-.check-in {
-    background-color: #4caf50;
-    color: #fff;
-    margin-right: 10px; /* Khoảng cách giữa nút */
+.check-in:hover,
+.check-out:hover {
+    background-color: #0056b3;
 }
 
-.check-out {
-    background-color: #f44336;
-    color: #fff;
-}
-
+/* Popup */
 .popup {
     position: fixed;
-    top: 70%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     display: none;
-    z-index: 999;
+    z-index: 10; /* Đảm bảo popup hiển thị trên các phần tử khác */
 }
 
 #popup-message {
-    text-align: center;
-    font-size: 18px;
-    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
 #close-popup {
-    display: block;
-    margin-top: 10px;
-    margin-left: auto; /* Đẩy nút về phía bên phải */
+    background-color: #007bff;
+    color: #fff;
     padding: 10px 20px;
-    background-color: #ccc;
+    font-size: 18px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#close-popup:hover {
+    background-color: #0056b3;
 }
